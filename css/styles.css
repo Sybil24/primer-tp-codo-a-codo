@@ -10,6 +10,8 @@ html{
 }
 
 .header{
+
+  /*        NAVIGATION            */
   .navbar {
     background-color: #353a40;
 
@@ -47,7 +49,7 @@ html{
   .container-hero{
     background: linear-gradient(to right, #0000006e, #0000006c),
       url(../assets/img/ba1.jpg) no-repeat 28% 72% / cover;
-    height: calc(100vh - 55vh);
+    height: 250px;
     
     .container-hero-info{
       display: flex;
@@ -303,6 +305,7 @@ html{
         padding-right: 100px;
 
         .description{
+          padding-right: 0;
           text-align: end;
           width: 550px;
 
@@ -375,3 +378,4 @@ html{
     }
   }
 }
+
