@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  font-family: "Noto Sans Shavian", sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+.header{
+  /*        NAVIGATION            */
+  .navbar {
+    background-color: #353a40;
+
+    .navbar-brand{
+      margin: 0;
+        
+      & h3{
+        color: #000;
+        font-weight: 100;
+        padding-left: .5em;
+      }
+    } 
+    .navbar-toggler{
+      border: 1px solid #242525;
+    }
+    .navbar-collapse {
+      background-color: #4c5055;
+
+      .nav-item .nav-link {
+        color: #949da2;
+      }
+      .nav-item .nav-link-white{
+        color: #ffffff;
+      }
+      .nav-item .nav-link-green{
+        color: #338d47;
+      }
+    }
+  }
+}
