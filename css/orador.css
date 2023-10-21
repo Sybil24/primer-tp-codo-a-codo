@@ -3,7 +3,10 @@
   font-family: "Noto Sans Shavian", sans-serif;
   margin: 0;
   padding: 0;
-
+}
+html{
+  min-width: 360px !important;
+  scroll-behavior: smooth;
 }
 
 .header{
@@ -13,12 +16,16 @@
 
     .navbar-brand{
       margin: 0;
-        
-      & h3{
-        color: #000;
-        font-weight: 100;
-        padding-left: .5em;
+      
+      & img{
+        height: 50px;
+        margin: 0;
       }
+    }
+    .container-fluid h3{
+      color: #ffffff;
+      display: none;
+      font-weight: 100;
     } 
     .navbar-toggler{
       border: 1px solid #242525;
@@ -35,6 +42,180 @@
       .nav-item .nav-link-green{
         color: #338d47;
       }
+    }
+  }
+}
+
+.main{
+  .container-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 2rem 0;
+
+    .cards{
+      border: 1px solid #158eff;
+      padding: 15px;
+      text-align: center;
+      overflow: hidden;
+
+      & h4, p:nth-of-type(2){
+        font-weight: bold;
+      }
+      &  p:nth-of-type(3){
+        color: #949da2;
+        font-size: 0.9em;
+      }
+    }
+    .cards:hover{
+      transform: scaleX(1.1);
+      overflow: hidden;
+    }
+    .cards:last-of-type{
+      border: 1px solid #f7df07;
+    }
+  }
+  .container-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .title-form h2{
+      background-color: #5b656e;
+      font-weight: bold;
+      padding: 10px 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    /*    FORMULARIO    */
+    .form{
+      min-width: 300px;
+      margin: 0 auto 20px;
+      width: 50%;
+
+      .container-user{
+        display: flex;
+        gap: 10px;
+      }
+      .container-mail{
+        margin: 20px 0;
+      }
+      .container-label{
+        display: flex;
+        gap: 10px;
+        
+        .cantidad, .categoria{
+          flex: 1;
+        }
+        .cantidad label, .categoria label{
+          padding-bottom: 5px;
+        }
+      }
+      .container-info{
+        margin: 20px 0;
+
+        .container-precio p{
+          background-color: #9dd5fa;
+          border-radius: 5px;
+          color: #0067c7;
+          padding: 10px;
+        }
+        .container-buttons{
+          display: flex;
+          gap: 10px;
+
+          & input{
+            background-color: #96c93e;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            padding: 5px;
+          }
+        }
+      }
+      & input, .categoria select{
+        border: 1px solid #242525;
+        border-radius: 3px;
+        outline: none;
+        padding: 5px 8px;
+        width: 100%;
+        color: #949da2;
+      }
+    }
+  }
+}
+
+.footer{
+  background: linear-gradient(#1c3846, #1e5170 );
+
+  .list-footer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0;
+
+    .list-footer-items .list-footer-items-link{
+      color: #ffffff;
+    }
+  }
+}
+
+@media screen and (min-width: 920px) {
+  *{
+    transition: 0.5s ease;
+  }
+
+  .header{
+    .navbar{
+      .navbar-brand img{
+        height: 80px;
+        padding-left: 50px;
+      }
+      .container-fluid h3{
+        display: block;
+      }
+      .navbar-collapse{
+        background-color: #353a40;
+        padding-right: 50px;
+      }
+    }
+  }
+  .main{
+    .container-form .title-form h2 {
+      background-color: #ffffff;
+      
+      & span{
+        font-size: .5em;
+        font-weight: 400;
+        transition: 0.5s ease;
+        display: block;
+      }
+    }
+    .container-form .form input, .container-form .form .categoria select{
+      border: 1px solid #949da2;
+    } 
+  }
+  .footer{
+    height:90px;
+
+    .list-footer{
+      gap: 50px;
+
+      .list-footer-items{
+        width: 100px;
+        text-align: center;
+        
+        .list-footer-items-link{
+          text-decoration: none;
+        }
+      } 
     }
   }
 }
