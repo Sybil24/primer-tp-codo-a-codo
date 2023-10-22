@@ -59,7 +59,7 @@ html{
       border: 1px solid #158eff;
       padding: 15px;
       text-align: center;
-      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
 
       & h4, p:nth-of-type(2){
         font-weight: bold;
@@ -70,8 +70,8 @@ html{
       }
     }
     .cards:hover{
-      transform: scaleX(1.1);
-      overflow: hidden;
+      transform: scale(1.1);
+      margin: 5px;
     }
     .cards:last-of-type{
       border: 1px solid #f7df07;
