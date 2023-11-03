@@ -10,8 +10,7 @@ html{
 }
 
 .header{
-
-  /*        NAVIGATION            */
+  /*        NAVEGACIÓN            */
   .navbar {
     background-color: #353a40;
 
@@ -37,6 +36,10 @@ html{
       .nav-item .nav-link {
         color: #949da2;
       }
+      .nav-item .nav-link:hover{
+        transform: scale(1.2);
+        transition: 0.3s ease-in;
+      }
       .nav-item .nav-link-white{
         color: #ffffff;
       }
@@ -45,7 +48,7 @@ html{
       }
     }
   }
-  /*           HERO               */
+  /*           PORTADA              */
   .container-hero{
     background: linear-gradient(to right, #0000006e, #0000006c),
       url(../assets/img/ba1.jpg) no-repeat 28% 72% / cover;
@@ -94,8 +97,9 @@ html{
     } 
   }
 }
-/*             MAIN                */
+
 .main {
+  /* ESTILOS PÁGINA PRINCIPAL */
   .section-oradores{
     display: flex;
     flex-direction: column;
@@ -108,14 +112,14 @@ html{
       text-transform: uppercase;
       width: 100%;
     }
-    .container-cards{
+    .container-cards-index{
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       gap: 15px;
 
-      .cards{
+      .cards-index{
         border: 1px solid #949da2;
         border-radius: 5px;
         overflow: hidden;
@@ -219,7 +223,7 @@ html{
       text-align: center;
     }
     /*            FORM               */
-    .form{
+    .form-index{
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -253,7 +257,122 @@ html{
       }
     }
   }
+
+  /* ESTILOS PÁGINA TICKETS */
+  .container-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 2rem 0;
+
+    .cards{
+      border: 1px solid #158eff;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+
+      & h4{
+        background-color: #158eff;
+        padding: 10px;
+      } 
+      & h4, p:nth-of-type(2){
+        font-weight: bold;
+      }
+      &  p:nth-of-type(3){
+        color: #a2949c;
+        font-size: 0.9em;
+        padding: 0 15px;
+      }
+    }
+    .cards:hover{
+      transform: scale(1.1);
+      margin: 5px;
+      box-shadow: 0px 5px 5px #888888;
+    }
+    .cards:last-of-type{
+      border: 1px solid #f7df07;
+
+      & h4{
+        background-color: #f7df07;
+      }
+    }
+  }
+  .container-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .title-form h2{
+      background-color: #5b656e;
+      font-weight: bold;
+      padding: 10px 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    /*    FORMULARIO    */
+    .form{
+      min-width: 300px;
+      margin: 0 auto 20px;
+      width: 50%;
+
+      .container-user{
+        display: flex;
+        gap: 10px;
+      }
+      .container-mail{
+        margin: 20px 0;
+      }
+      .container-label{
+        display: flex;
+        gap: 10px;
+        
+        .cantidad, .categoria{
+          flex: 1;
+        }
+        .cantidad label, .categoria label{
+          padding-bottom: 5px;
+        }
+      }
+      .container-info{
+        margin: 20px 0;
+
+        .container-precio p{
+          background-color: #9dd5fa;
+          border-radius: 5px;
+          color: #0067c7;
+          padding: 10px;
+        }
+        .container-buttons{
+          display: flex;
+          gap: 10px;
+
+          & input{
+            background-color: #96c93e;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            padding: 5px;
+          }
+          & input:active{
+            animation: movimientoVertical 0.8s linear both;
+          }
+        }
+      }
+      & input, .categoria select{
+        border: 1px solid #242525;
+        border-radius: 3px;
+        outline: none;
+        padding: 5px 8px;
+        width: 100%;
+        color: #949da2;
+      }
+    }
+  }
 }
+
+
 /*            FOOTER                */
 .footer{
   background: linear-gradient(#1c3846, #1e5170 );
@@ -275,7 +394,27 @@ html{
   }
 }
 
-/*         MEDIA QUERIES            */
+/*         ANIMACIONES              */
+/* INPUT SUBMIT TICKETS */
+@keyframes movimientoVertical{
+  0%, 100%{
+    transform: translateY(0);
+  }
+  10%,30%,50%,70%{
+    transform: translateY(-8px);
+  }
+  20%,40%,60%{
+    transform: translateY(8px);
+  }
+  80%{
+    transform: translateY(6.4px);
+  }
+  90%{
+    transform: translateY(-6.4px);
+  }
+}
+
+/*         MEDIA QUERIES             */
 @media screen and (min-width: 920px) {
   *{
     transition: 0.5s ease;
@@ -319,6 +458,7 @@ html{
 
   .main{
 
+  /* ESTILOS PÁGINA PRINCIPAL */
     .section-oradores{
       .title-oradores{
         background-color: #ffffff;
@@ -329,7 +469,7 @@ html{
           font-size: .4em;
         }
       }
-      .container-cards .cards{
+      .container-cards-index .cards-index{
         width: 300px;
       }
     }
@@ -351,15 +491,54 @@ html{
           font-size: .4em;
         }
       }
-      .form .container-inputs{
+      .form-index .container-inputs{
         flex-direction: row;
         gap: 30px;
       }
-      .form .input-form-submit{
+      .form-index .input-form-submit{
         padding: 8px;
       }
     }
 
+  /* ESTILOS PÁGINA TICKETS */
+    .container-cards {
+      .cards{
+        padding: 15px;
+        user-select: none;
+
+        & h4:last-of-type{
+          background-color: #ffffff;
+          padding: 0;
+        }
+        & h4{
+          background-color: #ffffff;
+          padding: 0;
+        }
+        &  p:nth-of-type(3){
+          padding: 0;
+        }
+      }
+      .cards:active{
+        transform: rotateY(250deg);
+		    perspective:(700px);
+        transition: .5s;
+	      transform-origin: center center;
+      }
+    }
+    .container-form .title-form h2 {
+      background-color: #ffffff;
+      
+      & span{
+        font-size: .5em;
+        font-weight: 400;
+        transition: 0.5s ease;
+        display: block;
+      }
+    }
+    .container-form .form input, .container-form .form .categoria select{
+      border: 1px solid #949da2;
+    } 
+    
   }  
   .footer{
     height:90px;
