@@ -71,19 +71,19 @@
 
   <main class="main">
     <section class="container-cards">
-      <article class="cards">
+      <article class="cards" id="Estudiante">
         <h4>Estudiante</h4>
         <p>Tienen un descuento</p>
         <p>80%</p>
         <p>* presentar documentación</p>
       </article>
-      <article class="cards">
+      <article class="cards" id="Trainee">
         <h4>Trainee</h4>
         <p>Tienen un descuento</p>
         <p>50%</p>
         <p>* presentar documentación</p>
       </article>
-      <article class="cards">
+      <article class="cards" id="Junior">
         <h4>Junior</h4>
         <p>Tienen un descuento</p>
         <p>15%</p>
@@ -97,20 +97,20 @@
       </div>
       <section class="form">
         <div class="container-user">
-          <input type="text" name="nombre" placeholder="Nombre" >
-          <input type="text" name="apellido" placeholder="Apellido" required>
+          <input type="text" name="nombre" placeholder="Nombre">
+          <input type="text" name="apellido" placeholder="Apellido">
         </div>
         <div class="container-mail">
-          <input type="email" name="email" placeholder="Correo" required>
+          <input type="email" name="email" placeholder="Correo">
         </div>
         <div class="container-label">
           <div class="cantidad">
             <label for="cantidad">Cantidad</label>
-            <input type="number" name="cantidad" id="cantidad" placeholder="Cantidad" required>
+            <input type="number" name="cantidad" id="cantidad" placeholder="Cantidad">
           </div>
           <div class="categoria">
             <label for="categoria">Categoría</label>
-            <select name="categoria" id="categoria" required>
+            <select name="categoria" id="categoria">
               <option value="Estudiante">Estudiante</option>
               <option value="Trainee">Trainee</option>
               <option value="Junior">Junior</option>
@@ -119,11 +119,11 @@
         </div>
         <div class="container-info">
           <div class="container-precio">
-            <p id="precioTotal">Total a pagar: $</p>
+            <p id="precioTotal">Total a pagar: $ <span id="precioFinal"></span></p>
           </div>
           <div class="container-buttons">
-            <input type="reset" value="Borrar">
-            <input type="submit" value="Resumen">
+            <button type="reset"  id="borrar" >Borrar</button>
+            <button type="button" id="resumen" >Resumen</button>
           </div>
         </div>
       </section>
